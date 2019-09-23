@@ -5,13 +5,13 @@
 <p>
 import tweepy
 
-consumer_key = 'TU-CONSUMER-KEY'
-consumer_secret = 'TU-CONSUMER-SECRET'
-access_token = 'TU-ACCESS-TOKEN'
-access_secret = 'TU-ACCESS-SECRET'
+<p>consumer_key = 'TU-CONSUMER-KEY'</p>
+<p>consumer_secret = 'TU-CONSUMER-SECRET'</p>
+<p>access_token = 'TU-ACCESS-TOKEN'<p>
+<p>access_secret = 'TU-ACCESS-SECRET'</p>
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+<p>auth = tweepy.OAuthHandler(consumer_key, consumer_secret)</p>
+<p>auth.set_access_token(access_token, access_token_secret)</p>
 
 api = tweepy.API(auth)
 </p>
