@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding: utf-8
 from login import *
 from tweepy import Stream
 
@@ -24,6 +26,7 @@ class MyStreamListener(tweepy.StreamListener):
         print(status.text)
 
     def on_error(self, status_code):
+        print('Error:',status_code)
         if status_code == 420:
             #returning False in on_error disconnects the stream
             return False
