@@ -1,7 +1,8 @@
 <h2>Recolección de datos de Twiter</h2>
 
-<h5>Archivo de configuración: login.py</h5>
 <b>Crearr app <a href="https://developer.twitter.com/en/apps">https://developer.twitter.com/en/apps</a></b>
+
+<h4>Archivo de configuración: login.py</h4>
 <p>
 import tweepy
 
@@ -16,7 +17,7 @@ import tweepy
 api = tweepy.API(auth)
 </p>
 
-<h5>Para poner los hashtag a buscar:</h5>
+<h4>Para poner los hashtag a buscar:</h4>
 <b>En hashtag.txt</b>
 <p>Ponerlos uno debajo del otro. Ejemplo:</p>
 <p>hashtag1</p>
