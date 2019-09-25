@@ -3,9 +3,8 @@
 from login import *
 from tweepy import Stream
 
-#public_tweets = api.home_timeline()
-#for tweet in public_tweets:
-#    print(tweet.text)
+import time
+
 with open('hashtag.txt', 'r') as file:
     lista_hashtag = [linea.replace('\n','') for linea in file]
 
@@ -15,7 +14,8 @@ class MyStreamListener(tweepy.StreamListener):
     def on_data(self,data):
         print('Guardando datos...')
         try:
-            with open('tweets.json','a') as f:
+            name = 'tweets/{}.json'.format(time.strftime('%Y-%m-%d_%H-%M-%S'))
+            with open(name,'w') as f:#open('tweets.json','a') as f:
                 f.write(data)
                 return True
         except BaseException as e:
