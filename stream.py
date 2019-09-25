@@ -4,6 +4,7 @@ from login import *
 from tweepy import Stream
 
 import time
+import os
 
 with open('hashtag.txt', 'r') as file:
     lista_hashtag = [linea.replace('\n','') for linea in file]
@@ -14,7 +15,12 @@ class MyStreamListener(tweepy.StreamListener):
     def on_data(self,data):
         print('Guardando datos...')
         try:
-            name = 'tweets/{}.json'.format(time.strftime('%Y-%m-%d_%H-%M-%S'))
+            directorio = 'tweets/'
+            try:
+                os.stat(directorio)
+            except:
+                os.mkdir(directorio)
+            name = '{}/{}.json'.format(directorio,time.strftime('%Y-%m-%d_%H-%M-%S'))
             with open(name,'w') as f:#open('tweets.json','a') as f:
                 f.write(data)
                 return True
